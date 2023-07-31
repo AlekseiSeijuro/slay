@@ -1,0 +1,168 @@
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Тест на память</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/first_surv_css.css' %}">
+</head>
+<body>
+    <style>body{
+    background-image: url({% static 'main/images/память.jpg' %});
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}</style>
+    <div id="head"><h1>Тест на память</h1></div>
+    <div id="main">
+        <p id="description">В этом тесте вам предстоит проверить свою память. Вам нужно будет вспомнить несколько известных фактов и выбрать 1 из предложенных вариантов ответа. Желаю удачи!</p>
+
+        <form action="memory_result" method="POST">
+
+                {% csrf_token %}
+        <label class="quest_text"><b>1.</b>Сможете вспомнить, на какой улице в Лондоне жил Шерлок Холмс?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest1" value='ans1_1'><span class="ans_text">Бейкер Стрит</span><br>
+                <input class="ans" type="radio" name="quest1" value='ans1_2'><span class="ans_text">Улица Вязов</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest1" value='ans1_3'><span class="ans_text">Бродвей</span><br>
+                <input class="ans" type="radio" name="quest1" value='ans1_4'><span class="ans_text">Оксфорд Стрит</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>2.</b> Где был похоронен Наполеон?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest2" value="ans2_1"><span class="ans_text">Остров Новая Земля</span><br>
+                <input class="ans" type="radio" name="quest2" value="ans2_2"><span class="ans_text">Остров Св. Елены</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest2" value="ans2_3"><span class="ans_text">Остров Св. Анны</span><br>
+                <input class="ans" type="radio" name="quest2" value="ans2_4"><span class="ans_text">Мальдивские острова</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>3.</b>Какой газ является самым легким?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest3" value="ans3_1"><span class="ans_text">Кислород</span><br>
+                <input class="ans" type="radio" name="quest3" value="ans3_2"><span class="ans_text">Азот</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest3" value="ans3_3"><span class="ans_text">Неон</span><br>
+                <input class="ans" type="radio" name="quest3" value="ans3_4"><span class="ans_text">Водород</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>4.</b>В каком здании находится резиденция английской королевы?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest4" value="ans4_1"><span class="ans_text">Биг Бэн</span><br>
+                <input class="ans" type="radio" name="quest4" value="ans4_2"><span class="ans_text">Скотланд Ярд</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest4" value="ans4_3"><span class="ans_text">Букинистический дворец</span><br>
+                <input class="ans" type="radio" name="quest4" value="ans4_4"><span class="ans_text">Букингемский дворец</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>5.</b>Сколько процентов Земли покрывает вода?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest5" value="ans5_1"><span class="ans_text">20%</span><br>
+                <input class="ans" type="radio" name="quest5" value="ans5_2"><span class="ans_text">56%</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest5" value="ans5_3"><span class="ans_text">95%</span><br>
+                <input class="ans" type="radio" name="quest5" value="ans5_4"><span class="ans_text">70%</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>6.</b>Какая самая высокая горная система в Южной Америке?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest6" value="ans6_1"><span class="ans_text">Кордильеры</span><br>
+                <input class="ans" type="radio" name="quest6" value="ans6_2"><span class="ans_text">Анды</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest6" value="ans6_3"><span class="ans_text">Гималаи</span><br>
+                <input class="ans" type="radio" name="quest6" value="ans6_4"><span class="ans_text">Альпы</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>7.</b>Колонией какого государства являлась Индия в начале 20-го века?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest7" value="ans7_1"><span class="ans_text">США</span><br>
+                <input class="ans" type="radio" name="quest7" value="ans7_2"><span class="ans_text">Франция</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest7" value="ans7_3"><span class="ans_text">Британия</span><br>
+                <input class="ans" type="radio" name="quest7" value="ans7_4"><span class="ans_text">Испания</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>8.</b>В греческой мифологии Немезида была богиней...</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest8" value="ans8_1"><span class="ans_text">Красоты</span><br>
+                <input class="ans" type="radio" name="quest8" value="ans8_2"><span class="ans_text">Верности</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest8" value="ans8_3"><span class="ans_text">Возмездия</span><br>
+                <input class="ans" type="radio" name="quest8" value="ans8_4"><span class="ans_text">Смерти</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>9.</b>Как называется отрезок, который соединяет вершину треугольника с серединой противоположной стороны?</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest9" value="ans9_1"><span class="ans_text">Биссектриса</span><br>
+                <input class="ans" type="radio" name="quest9" value="ans9_2"><span class="ans_text">Медиана</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest9" value="ans9_3"><span class="ans_text">Трапеция</span><br>
+                <input class="ans" type="radio" name="quest9" value="ans9_4"><span class="ans_text">Серединная биссектриса</span>
+            </div2>
+
+        <br><br><br>
+
+        <label class="quest_text"><b>10.</b>Назовите число Пи с точности до 5 знаков после запятой.</label><br>
+            <div1 class="section">
+                <input class="ans" type="radio" name="quest10" value="ans10_1"><span class="ans_text">3,14517</span><br>
+                <input class="ans" type="radio" name="quest10" value="ans10_2"><span class="ans_text">3,14159</span>
+            </div1>
+
+            <div2 class="section">
+                <input class="ans" type="radio" name="quest10" value="ans10_3"><span class="ans_text">3,14175</span><br>
+                <input class="ans" type="radio" name="quest10" value="ans10_4"><span class="ans_text">3,14195</span>
+            </div2>
+
+        <br><br><br>
+
+        <input id="sub" type="submit" value="Узнать результат">
+        </form>
+
+
+    </div>
+
+</body>
+</html>

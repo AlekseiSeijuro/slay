@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+#head{
+    display: block;
+    text-align: center;
+    background-color: #8b14c8;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: black;
+    font-family: 'Pacifico';
+    font-style: italic;
+    color: black;
+    margin-bottom: 10%;
+}
+
+#main{
+    display: block;
+    background-color: #8413be;
+    width: 75%;
+
+    opacity: 0.97;
+    margin-left: 12.5%;
+    font-family: 'Pacifico';
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: black;
+    float: left;
+}
+
+#description{
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+.section{
+    float: left;
+    margin-left: 3%;
+}
+
+.quest_text{
+    font-size: 25px;
+    color: black;
+}
+
+.ans::after{
+    background-color: black;
+}
+
+.ans{
+    accent-color: black;
+}
+
+.ans_text{
+    color: black;
+    font-size: 20px;
+}
+
+
+#result{
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+
+#sub{
+    background-color: #990fe0;
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: black;
+    width: 150px;
+    height: 75px;
+    margin-left:43%;
+    margin-bottom: 5%;
+}
+
+#sub:hover{
+    background-color: #a212ed;
+}
+
+#sub:active{
+    background-color: #850ec3;
+}
+
+#ref_to_main{
+    display: block;
+    color: black;
+    text-align: center;
+    width: 150px;
+    height: 75px;
+    background-color: #990fe0;
+    border: 2px solid;
+    border-radius: 50%;
+    border-color: black;
+    margin-top: 5%;
+    margin-left: 43%;
+    margin-bottom: 2%;
+    text-decoration: none;
+}
+
+#ref_to_main:hover{
+    background-color: #a212ed;
+}
+
+#ref_to_main:active{
+    background-color: #850ec3;
+}
+
+
+#text_to_main{
+    margin-top: 16%;
+}

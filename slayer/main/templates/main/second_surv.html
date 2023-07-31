@@ -1,0 +1,79 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Математический тест</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/second_surv_css3.css' %}">
+</head>
+
+<body>
+    <style>body{
+    background-image: url({% static 'main/images/матем.jpeg' %});
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+}</style>
+    <div id="head"><h1>Математический тест</h1></div>
+    <div id="main">
+        <p id="description">В этом тесте вам предстоит ответить на 10
+        простых и не очень математических вопросов и задач. В результате вы сможете узнать на сколько хорошо вы знаете математику в целом.
+        Желаю удачи!</p>
+            <form action="math_result" method="POST">
+
+                {% csrf_token %}
+
+            <label class="quest" id="quest1" for="ans1" > <b>1.</b> Решите это линейное уравнение. В поле для ответа укажите значение х. <br>
+                <p class="ur"><b>5х+4=7x</b></p> </label><br>
+            <input class="ans" oninput="SetAns(0,this)" id="ans1" name="ans1" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest2" for="ans2" > <b>2.</b> Катер, имеющий собственную скорость 15 км/ч, проплыл 2 часа по течению реки и 3 часа против течения. Какое расстояние проплыл катер за все время, если скорость течения реки 2 км/ч?(ответ дайте в км)</label><br>
+            <input class="ans" oninput="SetAns(1,this)" id="ans2" name="ans2" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest3" for="ans3" > <b>3.</b> В городе есть водоем. Одна труба может заполнить его за 4 ч, вторая - за 8 ч, а третья - за 24 ч. За сколько времени наполнится водоем, если открыть сразу три трубы?(ответ дайте в минутах)</label><br>
+            <input class="ans" oninput="SetAns(2,this)" id="ans3" name="ans3" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest4" for="ans4" > <b>4.</b> Решите это квадратное уравнение. Если корней несколько введите наибольший из них.<br>
+            <p class="ur"><b>x<sup>2</sup>–5x+6=0</b></p></label><br>
+            <input class="ans" oninput="SetAns(3,this)" id="ans4" name="ans4" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest5" for="ans5" ><b>5.</b> Загадано 2 числа, их сумма равна 36, а произведение 315. Найдите наименьшее из них.</label><br>
+            <input class="ans" oninput="SetAns(4,this)" id="ans5" name="ans5" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest6" for="ans6" ><b>6.</b> Из пункта А в пункт В, расстояние между которыми 700 км, выехал автобус. Из-за непогоды водитель уменьшил обычную скорость на 10 км/ч, и автобус ехал на 1 час 40 минут дольше. Сколько часов автобус обычно тратит на дорогу?</label><br>
+            <input class="ans" oninput="SetAns(5,this)" id="ans6" name="ans6" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest7" for="ans7" ><b>7.</b> В классе 16 учащихся, среди них два друга —Вадим и Сергей. Учащихся случайным образом разбивают на 4 равные группы. Найдите вероятность того, что Вадим и Сергей окажутся в одной группе.(ответ дайте в процентах)</label><br>
+            <input class="ans" oninput="SetAns(6,this)" id="ans7" name="ans7" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest8" for="ans8" ><b>8.</b> Чтобы пройти в следующий круг соревнований, футбольной команде нужно набрать хотя бы 4 очка в двух играх. Если команда выигрывает, она получает 3 очка, в случае ничьей — 1 очко, если проигрывает — 0 очков. Найдите вероятность того, что команде удастся выйти в следующий круг соревнований. Считайте, что в каждой игре вероятности выигрыша и проигрыша одинаковы и равны 0 , 3.(ответ дайте в процентах)</label><br>
+            <input class="ans" oninput="SetAns(7,this)" id="ans8" name="ans8" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest9" for="ans9" ><b>9.</b> Мальчик заплатил за бутылку с пробкой 11 рублей. Бутылка стоит на 10 рублей больше, чем пробка. Сколько стоит пробка?(ответ дайте в копейках)</label><br>
+            <input class="ans" oninput="SetAns(8,this)" id="ans9" name="ans9" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br>
+
+            <label class="quest" id="quest10" for="ans10" ><b>10.</b> У вас имеется 8 батареек из которых: 4 заряжены и 4 разряжены. Вы не знаете какие заряжены, а какие нет. Также у вас есть фонарь, для работы которого необходимы 2 заряженные батарейки. Какое наименьшее число попыток требуется чтобы гарантированно зажечь фонарь?</label><br>
+            <input class="ans" oninput="SetAns(9,this)" id="ans10" name="ans10" type="text" placeholder="Введите ответ..." maxlength="10">
+            <br><br><br><br>
+
+                <input id="sub" type="submit" value="Узнать результат">
+            </form>
+    </div>
+</body>
+</html>

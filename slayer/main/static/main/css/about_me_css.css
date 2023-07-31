@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+#main{
+    display: block;
+    background-color: white;
+    width: 50%;
+
+    opacity: 0.97;
+    margin-left: 25%;
+    font-family: 'Pacifico';
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: black;
+    float: left;
+    margin-top:20%;
+    text-align: center;
+    font-size: 25px;
+}
